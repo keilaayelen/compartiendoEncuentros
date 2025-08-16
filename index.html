@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Encuentros — Cena íntima de autor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./estilos.css">
+</head>
+<body>
+
+  <!-- CABECERA -->
+  <header class="cabecera">
+    <div class="envoltorio">
+      <div class="cabecera__logo">Encuentros</div>
+      <nav class="cabecera__nav">
+        <a href="#portada">Inicio</a>
+        <a href="#sobre-nosotros">Sobre nosotros</a>
+        <a href="#platillos">Platillos</a>
+        <a href="#reservas">Reservas</a>
+      </nav>
+      <a class="boton boton-cta cabecera__cta" href="#reservas">Reservar</a>
+    </div>
+  </header>
+
+  <!-- PORTADA -->
+  <section id="portada" class="portada revelar">
+    <img class="portada__fondo" src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1974&auto=format&fit=crop" alt="Ambiente íntimo de cena">
+    <div class="portada__overlay"></div>
+    <div class="portada__contenido">
+      <h1 class="titulo titulo--portada">Encuentros</h1>
+      <p class="bajada">Cena íntima de autor. 9 lugares. 7 pasos. Cocina en vivo.</p>
+      <a class="boton boton-cta" href="#reservas">Reservá ahora</a>
+    </div>
+  </section>
+
+  <!-- SEPARADOR -->
+  <div class="separador"></div>
+
+  <!-- SOBRE NOSOTROS -->
+  <section id="sobre-nosotros" class="seccion revelar">
+    <div class="panel panel--oscuro">
+      <h2 class="titulo">Sobre nosotros</h2>
+      <p>
+        Experiencia gastronómica íntima, con cocina en vivo en un hogar de Mar del Plata.
+        7 pasos creados por uno de los mejores cocineros de la ciudad. Reservas limitadas.
+      </p>
+    </div>
+  </section>
+
+  <!-- NUESTROS PLATILLOS -->
+  <section id="platillos" class="seccion revelar">
+    <div class="panel panel--oscuro">
+      <h2 class="titulo">Nuestros platillos</h2>
+      <div class="galeria">
+        <figure class="tarjeta" data-caption="Vieiras selladas con emulsión cítrica">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1887&auto=format&fit=crop" alt="Plato 1">
+          <figcaption>Vieiras con emulsión cítrica</figcaption>
+        </figure>
+        <figure class="tarjeta" data-caption="Risotto de hongos y parmesano">
+          <img src="https://images.unsplash.com/photo-1526318472351-c75fcf070305?q=80&w=1974&auto=format&fit=crop" alt="Plato 2">
+          <figcaption>Risotto de hongos</figcaption>
+        </figure>
+        <figure class="tarjeta" data-caption="Postre tibio de chocolate amargo">
+          <img src="https://images.unsplash.com/photo-1505253758473-96b7015fcd40?q=80&w=1974&auto=format&fit=crop" alt="Plato 3">
+          <figcaption>Chocolate amargo</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" aria-hidden="true">
+    <div class="lightbox__inner">
+      <img alt="Detalle del plato">
+      <p class="lightbox__caption"></p>
+    </div>
+  </div>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="seccion revelar">
+    <div class="panel panel--oscuro">
+      <h2 class="titulo">Nuestros servicios</h2>
+      <div class="botonera">
+        <a class="boton boton-cta" href="#reservas">Encuentros</a>
+        <a class="boton boton-secundario" href="./eventos.html">Eventos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVAS -->
+  <section id="reservas" class="seccion revelar">
+    <div class="panel panel--oscuro">
+      <span class="insignia">Sólo 9 lugares por noche</span>
+      <h2 class="titulo">Reservá tu lugar</h2>
+      <p class="ayuda">Cupos limitados. El dueñ@ ajusta fechas y cupos desde Airtable.</p>
+
+      <form id="form-reserva" class="form">
+        <label>Fecha
+          <select id="sel-fecha" required></select>
+        </label>
+        <label>Hora
+          <select id="sel-hora" required></select>
+        </label>
+        <label>Cantidad (1–9)
+          <input id="inp-cantidad" type="number" min="1" max="9" value="1" required>
+        </label>
+
+        <div class="ayuda">Cupo restante: <strong id="cupo-restante">—</strong></div>
+
+        <label>Nombre
+          <input id="inp-nombre" type="text" required>
+        </label>
+        <label>Email
+          <input id="inp-email" type="email" required>
+        </label>
+        <label>Teléfono
+          <input id="inp-telefono" type="tel" required>
+        </label>
+        <label>Preferencias (Veg / Celíaco / Otros)
+          <textarea id="inp-preferencias" rows="3" placeholder="Contanos si tenés restricciones."></textarea>
+        </label>
+
+        <label class="check">
+          <input type="checkbox" required>
+          <span class="ayuda">Acepto términos / cancelaciones (si cancelás luego de reservar, no hay devolución).</span>
+        </label>
+
+        <div class="ayuda">Total: <strong id="precio-total">$ —</strong></div>
+        <button class="boton boton-cta" type="submit">Reservar ahora</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- PIE -->
+  <footer id="pie" class="pie">
+    <div class="envoltorio">
+      <h3 class="titulo titulo--pie">Gracias por compartir la mesa con nosotros.</h3>
+      <p class="ayuda">Cena íntima de autor, una experiencia gastronómica única.</p>
+      <div class="botonera">
+        <a id="btn-wa" class="boton boton-contorno" href="#" target="_blank" rel="noopener">Contactanos</a>
+        <a id="btn-maps" class="boton boton-contorno" href="#" target="_blank" rel="noopener">Dónde encontrarnos</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./config.js"></script>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
