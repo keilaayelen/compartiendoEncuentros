@@ -34,10 +34,13 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: url('https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&w=1974&auto=format&fit=crop') center/cover no-repeat;
+  background-image: url(../assets/img/fondoh2.avif);
+  background-size: cover;
+  background-position: center;
   filter: brightness(.45) saturate(.9) blur(1px);
   z-index: -2;
 }
+
 
 body::after {
   content: "";
