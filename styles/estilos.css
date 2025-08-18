@@ -334,39 +334,41 @@ body::after {
   max-width: 90%;
 }
 
-/* Texto + imagen lado a lado */
+/* Foto lichi cocinero */
 .ratatouille{
   display: flex;
-  align-items: center;
-  gap: 24px;                
-  margin-top: 12px;
+  flex-direction: column; 
+  gap: 16px;
 }
 
-.rat-text{
-  flex: 1 1 55%;             
-}
+.lichi-text{}
 
-.rat-img{
-  flex: 1 1 45%;
+/* Imagen */
+.lichi-img{
   display: flex;
-  justify-content: center;   
+  justify-content: center;
 }
-
-.rat-img img{
-  max-width: 100%;
+.lichi-img img{
+  max-width: 92%;
   height: auto;
   border-radius: 14px;
   box-shadow: var(--shadow);
 }
 
-/* Responsive: en pantallas chicas, apilar */
-@media (max-width: 900px){
+/* Desktop: lado a lado */
+@media (min-width: 900px){
   .ratatouille{
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row;    
+    align-items: center;
+    gap: 32px;
   }
-  .rat-img{ width: 100%; }
+  .rat-text{ flex: 1 1 55%; }
+  .rat-img { flex: 1 1 45%; }
+  .rat-img img{ max-width: 100%; }
 }
+
+
+
 
 
 /* Formulario */
